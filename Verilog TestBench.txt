@@ -1,0 +1,40 @@
+
+module newspaper_vend_tb;
+
+  reg clk;
+  reg rst;
+  reg [1:0] in;
+  wire out;
+  wire [1:0] change;
+
+  newspaper_vend dut (
+    .clk(clk),
+    .rst(rst),
+    .in(in),
+    .out(out),
+    .change(change)
+  );
+
+  initial begin
+    clk = 0;
+    rst = 1;
+    in = 0;
+    #10 rst = 0;
+    #20 in = 2'b01;
+    #20 in = 2'b10;
+    #20 in = 0;
+    #20 in = 2'b10;
+    #20 in = 2'b10;
+    #20 in = 0;
+    #20 in = 2'b01;
+    #20 in = 2'b01;
+    #20 in = 2'b01;
+     #20 in = 0;
+    
+    #20 $finish;
+  end
+
+  always begin
+    #5 clk = ~clk;
+  end  
+endmodule
