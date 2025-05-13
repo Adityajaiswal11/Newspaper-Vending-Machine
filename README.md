@@ -1,4 +1,5 @@
 #Newspaper Vending Machine (Verilog)
+
 This project implements a Newspaper Vending Machine using Verilog HDL, designed to simulate a simple digital system that accepts coins, verifies the inserted amount, dispenses a newspaper when the correct total is reached, and returns change if overpaid. The design uses a Finite State Machine (FSM) to control operations.
 
 Features
